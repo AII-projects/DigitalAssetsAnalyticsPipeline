@@ -1,0 +1,16 @@
+version: 2
+
+exposures:
+  - name: power_bi_crypto_overview
+    type: dashboard
+    maturity: medium
+    url: https://placeholder.local/powerbi/crypto_overview
+    description: >
+      Power BI dashboard for crypto OHLC + volume + KPIs.
+    depends_on:
+      - ref('fct_candles_1m')
+      - ref('fct_candles_5m')
+      - ref('dim_symbol')
+    owner:
+      name: Aakash
+      email: aakash@example.com

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_symbol
+    columns:
+      - name: symbol_key
+        tests: [not_null, unique]
+      - name: symbol
+        tests: [not_null]
+
+  - name: fct_candles_1m
+    columns:
+      - name: candle_id
+        tests: [not_null, unique]
+      - name: candle_time
+        tests: [not_null]
+      - name: symbol_key
+        tests: [not_null]
+      - name: close
+        tests: [not_null]

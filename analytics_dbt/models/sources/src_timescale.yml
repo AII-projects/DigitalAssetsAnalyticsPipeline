@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw_timescale
+    schema: public
+    tables:
+      - name: market_candles_1m
+        columns:
+          - name: time
+            tests: [not_null]
+          - name: symbol
+            tests: [not_null]
+          - name: close
+            tests: [not_null]

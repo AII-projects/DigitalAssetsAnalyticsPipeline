@@ -1,0 +1,48 @@
+# ----------------------------
+# Temp
+# ----------------------------
+
+producer/
+scripts
+
+
+
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.log
+.venv/
+venv/
+.env
+.env.*
+pip-wheel-metadata/
+
+# ----------------------------
+# OS / IDE
+# ----------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ----------------------------
+# dbt (generated)
+# ----------------------------
+analytics_dbt/target/
+analytics_dbt/logs/
+analytics_dbt/dbt_packages/
+analytics_dbt/.dbt/profiles.yml
+
+# Optional: dbt partial parse cache (if it appears)
+analytics_dbt/.user.yml
+analytics_dbt/**/partial_parse.msgpack
+
+# ----------------------------
+# Spark / local state
+# ----------------------------
+checkpoints/
+spark-processor-checkpoints/
+*.parquet
+*.delta
