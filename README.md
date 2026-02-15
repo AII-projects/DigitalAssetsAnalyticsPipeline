@@ -68,7 +68,7 @@ dbt models (analytics schema)
         |
         v
 Power BI Desktop (DirectQuery + Auto Page Refresh)
-  - trading terminal + pipeline health dashboard
+  - trading terminal 
 
 ## How the Data Flows
 
@@ -127,7 +127,6 @@ dbt builds BI-friendly analytics objects in the analytics schema:
 * `analytics.dim_symbol`
 * `analytics.fct_candles_1m`
 * `analytics.fct_candles_5m`
-* `analytics.mart_pipeline_health`
 
 ### 7. Visualize (Power BI)
 Power BI uses DirectQuery so it can auto-refresh and reflect new candles as they arrive.
@@ -275,7 +274,6 @@ docker exec -it timescaledb psql -U postgres -d stock_db -c "\dv analytics.*"
 * `analytics.dim_symbol`
 * `analytics.fct_candles_1m`
 * `analytics.fct_candles_5m`
-* `analytics.mart_pipeline_health` (if included)
 
 ### 9. Power BI Dashboard Setup
 
@@ -291,7 +289,6 @@ Load the following tables/views:
 * `analytics.dim_symbol`
 * `analytics.fct_candles_1m`
 * `analytics.fct_candles_5m`
-* `analytics.mart_pipeline_health`
 
 **9.3 Relationships (Model view)**
 Create the following relationships:
@@ -302,14 +299,12 @@ Create the following relationships:
 * **Overview:** Latest price, 1h/24h change, high/low, volume, latency + price/volume charts.
 * **Candlestick:** Deneb candlestick + OHLC stats panel.
 * **Volatility:** Returns line + rolling volatility + return histogram.
-* **Pipeline Health:** Lag per symbol, stale flags, last candle time.
 
 **9.5 Auto Refresh (Desktop)**
 Navigate to **Format → Page refresh → On**.
 *Suggested intervals:*
 * **Overview:** 60s
 * **Candlestick:** 60–120s
-* **Pipeline Health:** 30–60s
 
 ---
 
