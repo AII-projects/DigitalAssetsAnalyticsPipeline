@@ -73,7 +73,7 @@ Power BI Desktop (DirectQuery + Auto Page Refresh)
 ## How the Data Flows
 
 ### 1. Obtain Data (Kraken WebSocket)
-We subscribe to Kraken’s WebSocket v2 trade channel for selected symbols (e.g., **BTC/USD**, **ETH/USD**, **SOL/USD**) and receive real-time trades. Trades include price, size (qty), side, timestamp, and other relevant metadata.
+We subscribed to Kraken’s WebSocket v2 trade channel for selected symbols (e.g., **BTC/USD**, **ETH/USD**, **SOL/USD**) and receive real-time trades. Trades include price, size (qty), side, timestamp, and other relevant metadata.
 
 ### 2. Normalize & Serialize to Avro (Producer)
 Kraken payloads are parsed and immediately normalized into a stable, internal event schema serialized into **Avro** format, bypassing fragile JSON entirely. This enforces a strict data contract from the very start. The schema is registered in the **Schema Registry** so downstream consumers can always decode it reliably.
