@@ -6,7 +6,7 @@ A local-first, open-source streaming analytics pipeline for real-time digital as
 
 
 
-This project is designed to be portfolio-grade and demonstrates:
+This project demonstrates:
 
 * **Real-time ingestion** from a real market feed
 * **Schema enforcement** (Avro + Schema Registry)
